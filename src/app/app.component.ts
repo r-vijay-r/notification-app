@@ -15,8 +15,11 @@ export class AppComponent {
         )
   }
   send(title:string,body:string){
-  	this._pushNotifications.create(title,{body: body}).subscribe(
-            res => console.log(res),
+  	var audio = new Audio();
+	audio.src = "../glass_ping-Go445-1207030150.wav";
+	audio.load();
+  	this._pushNotifications.create(title,{body: body,icon:'../favicon.ico'}).subscribe(
+            res => audio.play(),
             err => console.log(err)
         );
   }
