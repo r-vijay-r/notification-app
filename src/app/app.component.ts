@@ -16,7 +16,7 @@ export class AppComponent {
   }
   send(title:string,body:string){
   	var audio = new Audio();
-	audio.src = "../glass_ping-Go445-1207030150.wav";
+	audio.src = "http://soundbible.com/grab.php?id=2084&type=wav";
 	audio.load();
   	this._pushNotifications.create(title,{body: body,icon:'../favicon.ico'}).subscribe(
             res => audio.play(),
